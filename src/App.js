@@ -7,7 +7,7 @@ function App() {
 
   const getAllToDo = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/");
+      const res = await axios.get("https://todo-app-gj5e.onrender.com/");
       console.log(res.data);
       setToDo(res.data);
     } catch (error) {
@@ -26,7 +26,7 @@ function App() {
 
   const save = async () => {
     try {
-      const res = await axios.post("http://localhost:4000/save", {
+      const res = await axios.post("https://todo-app-gj5e.onrender.com/save", {
         text: post.text,
       });
       // setToDo([...toDo, res.data]);
@@ -40,7 +40,9 @@ function App() {
 
   const deleteToDo = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:4000/delete/${id}`);
+      const res = await axios.delete(
+        `https://todo-app-gj5e.onrender.com/delete/${id}`
+      );
       console.log(res);
       window.location.reload();
     } catch (error) {
